@@ -22,11 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 initRoutes(app);
 
-// db.sequelize.sync();
+db.sequelize.sync();
 
-db.sequelize.sync({ force: true }).then(() => {
-  console.log("Drop and re-sync db.");
-});
+// db.sequelize.sync({ force: true }).then(() => {
+// console.log("Drop and re-sync db.");
+// });
 
 app.listen(PORT, () => {
   console.log(`Running at localhost:${PORT}`);

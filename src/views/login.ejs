@@ -1,73 +1,170 @@
-<!DOCTYPE html>
-<html lang="en" class="h-100">
+<html>
+  <head>
+    <style>
+      .column {
+        float: left;
+        width: auto;
+        padding: 0px;
+      }
+      .container {
+        width: auto;
+        height: auto;
+        position: relative;
+        text-align: center;
+      }
+      img {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+      }
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Login</title>
-    <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-    <link href="/css/style.css" rel="stylesheet">
-</head>
+      .text1 {
+        position: absolute;
+        top: 9%;
+        left: 25%;
+      }
+      .text2 {
+        position: absolute;
+        left: 5%;
+        top: 25%;
+      }
 
-<body class="h-100">
-    <div class="authincation h-100">
-        <div class="container-fluid h-100">
-            <div class="row justify-content-center h-100 align-items-center">
-                <div class="col-md-6">
-                    <div class="authincation-content">
-                        <div class="row no-gutters">
-                            <div class="col-xl-12">
-                                <div class="auth-form text-dark">
-                                    <h4 class="text-center mb-4">User Login</h4>
-                                    <form class="form-valide " action="" method="POST" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label><strong>Phone Number</strong></label>
-                                            <input type="text" name="phone" class="form-control" required>
-                                        </div>
-                                        <div class="form-group">
-                                            <label><strong>Password</strong></label>
-                                            <input type="password" name= "password" class="form-control" required>
-                                        </div>
-                                        <div class="form-row d-flex justify-content-between mt-4 mb-2">
-                                            <div class="form-group">
-                                                <div class="form-check ml-2">
-                                                    <input class="form-check-input" type="checkbox" id="basic_checkbox_1">
-                                                    <label class="form-check-label" for="basic_checkbox_1">Remember Account</label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        
-                                        <% if(locals.err_msg) { %>
-                                            <div class="alert text-danger" role="alert"><%= err_msg %></div>
-                                        <% } %>
-                                        <div class="text-center">
-                                            <input type="submit" class="btn btn-primary btn-block" value="Login">
-                                        </div>
-                                    </form>
-                                    <div class="new-account mt-3 text-center">
-                                        <p>You do not have an account? <a class="text-primary" href="/register">Register</a></p>
-                                        <p><a class="text-primary" href="/admin/login"><strong>DOCTOR LOGIN!</strong></a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      .text3 {
+        position: absolute;
+        left: 5%;
+        top: 40%;
+      }
+
+      .text4 {
+        position: absolute;
+        left: 68.5%;
+        top: 52.5%;
+        font-size: 15;
+      }
+
+      .text5 {
+        position: absolute;
+        top: 72%;
+        left: 29%;
+      }
+
+      .text6 {
+        position: absolute;
+        top: 78%;
+        left: 30.8%;
+        font-weight: bold;
+      }
+
+      input[type="text"] {
+        position: absolute;
+        width: 500%;
+        left: 1px;
+        top: 22px;
+        padding: 12px 0px;
+        border: 0px solid #ccc;
+        border-bottom: 1px solid rgb(112, 112, 112);
+        font-size: 20;
+      }
+
+      a:link {
+        color: rgb(112, 112, 112);
+        border-bottom: none;
+      }
+
+      a:visited {
+        color: rgb(112, 112, 112);
+        border-bottom: none;
+      }
+
+      input[type="password"] {
+        position: absolute;
+        width: 710%;
+        left: 1px;
+        top: 22px;
+        padding: 12px 0px;
+        border: 0px solid #ccc;
+        border-bottom: 1px solid rgb(112, 112, 112);
+        font-size: 20;
+      }
+
+      body {
+        font-family: sans-serif;
+      }
+
+      button {
+        position: absolute;
+        margin: 0;
+        transform: translate(-50%, -50%);
+        border: 0;
+        border-radius: 30px;
+        top: 65%;
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        padding: 16px 30px;
+        cursor: pointer;
+        background-color: rgb(143, 140, 140);
+      }
+
+      button:hover {
+        opacity: 0, 9;
+      }
+
+      .content {
+        position: absolute;
+        max-width: 1340px;
+        margin: 0;
+        /*transform: translate(31%, 25%);*/
+        background: white;
+      }
+    </style>
+  </head>
+  <body class="content" style="background-color: rgb(216, 212, 212)">
+    <form
+      class="form-valide"
+      action=""
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div class="column">
+        <img src="images/login/doc.jpg" style="width: 100%" />
+      </div>
+      <div class="column">
+        <div class="container">
+          <img src="images/login/docwhite.jpg" style="width: 100%" />
+          <h2 class="text1" style="color: rgb(39, 38, 38)">
+            Người dùng Đăng Nhập
+          </h2>
+          <p class="text2" style="color: rgb(112, 112, 112)">
+            Số điện thoại <br />
+            <input type="text" name="phone" required /> <br />
+          </p>
+
+          <p class="text3" style="color: rgb(112, 112, 112)">
+            Mật khẩu <br />
+            <input type="password" name="password" required /> <br />
+          </p>
+
+          <p class="text4" style="color: rgb(112, 112, 112)">
+            <a href="" style="text-decoration: none"> Quên mật khẩu? </a>
+          </p>
+          <br />
+          <button type="submit">Login</button> <br />
+          <p class="text5" style="color: rgb(112, 112, 112)">
+            Bạn chưa có tài khoản?
+            <a href="/register"> Đăng ký </a>
+          </p>
+          <br />
+          <p class="text6" style="color: rgb(110, 9, 241)">
+            <a href="/admin/login" style="text-decoration: none">
+              Đăng nhập dành cho bác sĩ
+            </a>
+          </p>
+          <br />
         </div>
-    </div>
-
-
-    <!--**********************************
-        Scripts
-    ***********************************-->
-    <!-- Required vendors -->
-    <script src="/vendor/global/global.min.js"></script>
-    <script src="/js/quixnav-init.js"></script>
-    <script src="/js/custom.min.js"></script>
-
-</body>
-
+      </div>
+    </form>
+  </body>
 </html>
